@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "lint": "eslint . --ext .ts --max-warnings=0",
     "test": "jest"
   },
   "repository": {

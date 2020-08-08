@@ -7,7 +7,7 @@ export class BrowserHelper {
     return !!this.#browser;
   }
 
-  async launch(): Promise<BrowserHelper> {
+  async init(): Promise<BrowserHelper> {
     this.#browser = await puppeteer.launch();
 
     return this;

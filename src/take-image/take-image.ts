@@ -4,7 +4,7 @@ export const takeImage = async (): Promise<string | null> => {
   let screenshot: string | null = null;
 
   try {
-    await browserHelper.launch();
+    await browserHelper.init();
     screenshot = await browserHelper.getScreenshot(document.documentElement.outerHTML) ?? null;
   } finally {
     await browserHelper.close();
