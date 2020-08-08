@@ -20,6 +20,7 @@ const testContent = `
 `;
 
 describe('Happy Path', (): void => {
+  jest.setTimeout(15000);
   let originalDocument: any;
 
   beforeEach((): void => {
