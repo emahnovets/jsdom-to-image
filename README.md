@@ -1,4 +1,8 @@
-# jsdom-to-image
+# JSDOM to image
+
+[![airbnb-style](https://img.shields.io/badge/eslint-airbnb-4B32C3.svg)](https://github.com/airbnb/javascript)
+[![npm version](https://badge.fury.io/js/jsdom-to-image.svg)](https://www.npmjs.com/package/jsdom-to-image)
+
 Generate image from JSDOM
 
 Main goal of this package is to be used for regression testing in pair with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
@@ -104,7 +108,7 @@ setGlobalOptions({
 })
 ```
 
-In that case your test run would looks like this:
+In that case your test run would look like this:
 ```bash
 docker-compose up -d
 npm test
