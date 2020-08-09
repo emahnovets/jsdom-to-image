@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts --max-warnings=0",
+    "prepare": "npm run build",
     "test": "jest"
   },
   "repository": {
