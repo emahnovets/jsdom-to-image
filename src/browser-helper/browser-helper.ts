@@ -1,4 +1,11 @@
 import puppeteer, { Browser } from 'puppeteer';
+import { ItemNotFoundError } from '../item-not-found-error';
+import { getOptions } from '../options';
+
+export interface ScreenshotOptions {
+  fullPage?: boolean;
+  selector?: string;
+}
 
 export class BrowserHelper {
   #browser!: Browser | null;
@@ -7,17 +14,35 @@ export class BrowserHelper {
     return !!this.#browser;
   }
 
-  async init(): Promise<BrowserHelper> {
-    this.#browser = await puppeteer.launch();
+  async init(): Promise<void> {
+    const options = getOptions();
 
-    return this;
+    if (options.connectOptions) {
+      this.#browser = await puppeteer.connect(options.connectOptions);
+      return;
+    }
+
+    this.#browser = await puppeteer.launch(options.launchOptions);
   }
 
-  async getScreenshot(html: string): Promise<string | undefined> {
+  async getScreenshot(html: string, options?: ScreenshotOptions): Promise<string | undefined> {
     const page = await this.#browser?.newPage();
     await page?.setContent(html, { waitUntil: 'networkidle0' });
 
-    return page?.screenshot();
+    if (options?.selector) {
+      const element = await page?.$(options.selector);
+
+      if (!element) {
+        throw new ItemNotFoundError(options.selector);
+      }
+
+      return element?.screenshot();
+    }
+
+    return page?.screenshot({
+      fullPage: options?.fullPage ?? true,
+      encoding: 'base64',
+    });
   }
 
   async close(): Promise<void> {

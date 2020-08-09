@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import { takeImage } from '../src';
+import { ItemNotFoundError, takeImage } from '../src';
 
 const testContent = `
 <!DOCTYPE html>
@@ -36,5 +36,13 @@ describe('Happy Path', (): void => {
 
   it('should take an image of current content in jsdom', async (): Promise<void> => {
     expect(await takeImage()).toMatchImageSnapshot();
+  });
+
+  it('should take an image using selector', async (): Promise<void> => {
+    expect(await takeImage({ selector: '.test-item' })).toMatchImageSnapshot();
+  });
+
+  it('should take an image using selector if no item found', async (): Promise<void> => {
+    await expect(takeImage({ selector: '.test-item1' })).rejects.toThrow(ItemNotFoundError);
   });
 });
