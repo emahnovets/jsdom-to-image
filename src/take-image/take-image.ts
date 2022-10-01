@@ -1,6 +1,6 @@
 import { ScreenshotOptions, browserHelper } from '../browser-helper';
 
-export const takeImage = async (options?: ScreenshotOptions): Promise<string> => {
+export const takeImage = async (options?: ScreenshotOptions): Promise<string | Buffer> => {
   let screenshot: string | Buffer = '';
 
   try {
@@ -10,5 +10,5 @@ export const takeImage = async (options?: ScreenshotOptions): Promise<string> =>
     await browserHelper.close();
   }
 
-  return screenshot?.toString();
+  return screenshot;
 };
