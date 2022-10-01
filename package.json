@@ -8,10 +8,12 @@
     "dist"
   ],
   "scripts": {
+    "install:pre-commit-hooks": "pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg -t commit-msg -f",
     "build": "tsc",
     "lint": "eslint . --ext .ts --max-warnings=0",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,7 @@
     "screenshot",
     "visual-regression"
   ],
-  "author": "Evgeny Mahnovets <evgeny.mahnovets@gmail.com>",
+  "author": "Evgeny Mahnovets <mail@emahnovets.dev>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/emahnovets/jsdom-to-image/issues"
@@ -33,7 +35,11 @@
     "puppeteer": "^18.0.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@emahnovets/eslint-config-typescript": "^1.1.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.6",
     "@types/jest": "^28.1.3",
     "@types/jest-image-snapshot": "^5.1.0",
     "@types/jsdom": "^20.0.0",
@@ -43,6 +49,7 @@
     "jest-image-snapshot": "^5.2.0",
     "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5",
     "ts-jest": "^28.0.8",
     "typescript": "^4.8.4"
   }
