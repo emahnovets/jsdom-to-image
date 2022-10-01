@@ -1,7 +1,7 @@
 {
   "name": "jsdom-to-image",
   "version": "1.0.1",
-  "description": "Generale image from JSDOM ",
+  "description": "Generale image from JSDOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -30,23 +30,20 @@
   },
   "homepage": "https://github.com/emahnovets/jsdom-to-image#readme",
   "dependencies": {
-    "puppeteer": "^5.2.1"
+    "puppeteer": "^18.0.5"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.9",
-    "@types/jest-image-snapshot": "^3.1.0",
-    "@types/jsdom": "^16.2.3",
-    "@types/puppeteer": "^3.0.1",
-    "@typescript-eslint/eslint-plugin": "^3.8.0",
-    "@typescript-eslint/parser": "^3.8.0",
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.20.0",
-    "jest": "^26.2.2",
-    "jest-image-snapshot": "^4.1.0",
-    "jsdom": "^16.3.0",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "@emahnovets/eslint-config-typescript": "^1.1.1",
+    "@types/jest": "^28.1.3",
+    "@types/jest-image-snapshot": "^5.1.0",
+    "@types/jsdom": "^20.0.0",
+    "@types/puppeteer": "^5.4.6",
+    "eslint": "^8.24.0",
+    "jest": "^28.1.3",
+    "jest-image-snapshot": "^5.2.0",
+    "jsdom": "^20.0.0",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.8",
+    "typescript": "^4.8.4"
   }
 }

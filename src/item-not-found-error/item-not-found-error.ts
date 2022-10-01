@@ -3,5 +3,3 @@ export class ItemNotFoundError extends Error {
     super(`No item found for given selector: ${selector}`);
   }
 }
-
-export default ItemNotFoundError;

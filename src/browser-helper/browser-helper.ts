@@ -25,7 +25,7 @@ export class BrowserHelper {
     this.#browser = await puppeteer.launch(options.launchOptions);
   }
 
-  async getScreenshot(html: string, options?: ScreenshotOptions): Promise<string | undefined> {
+  async getScreenshot(html: string, options?: ScreenshotOptions): Promise<string | Buffer | undefined> {
     const page = await this.#browser?.newPage();
     await page?.setContent(html, { waitUntil: 'networkidle0' });
 
