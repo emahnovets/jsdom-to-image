@@ -21,12 +21,14 @@ const testContent = `
 
 describe('Happy Path', (): void => {
   jest.setTimeout(15000);
-  let originalDocument: any;
+  let originalDocument: Document;
 
   beforeEach((): void => {
     originalDocument = global.document;
 
-    const { window: { document } } = new JSDOM(testContent);
+    const {
+      window: { document },
+    } = new JSDOM(testContent);
     global.document = document;
   });
 
