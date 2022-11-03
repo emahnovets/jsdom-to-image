@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/emahnovets/jsdom-to-image#readme",
   "dependencies": {
-    "puppeteer": "^18.0.5"
+    "puppeteer": "^19.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
