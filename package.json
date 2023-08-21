@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "install:pre-commit-hooks": "pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg -t commit-msg -f",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint . --ext .ts --max-warnings=0",
     "prepare": "npm run build",
     "test": "jest",
