@@ -1,6 +1,6 @@
 {
   "name": "jsdom-to-image",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generale image from JSDOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "install:pre-commit-hooks": "pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg -t commit-msg -f",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint . --ext .ts --max-warnings=0",
     "prepare": "npm run build",
     "test": "jest",
