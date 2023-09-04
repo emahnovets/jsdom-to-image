@@ -1,6 +1,6 @@
 {
   "name": "jsdom-to-image",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generale image from JSDOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "install:pre-commit-hooks": "pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg -t commit-msg -f",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "lint": "eslint . --ext .ts --max-warnings=0",
     "prepare": "npm run build",
     "test": "jest",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/emahnovets/jsdom-to-image#readme",
   "dependencies": {
-    "puppeteer": "^18.0.5"
+    "puppeteer": "^21.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -52,5 +52,8 @@
     "semantic-release": "^19.0.5",
     "ts-jest": "^28.0.8",
     "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
   }
 }
