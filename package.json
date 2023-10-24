@@ -1,6 +1,6 @@
 {
   "name": "jsdom-to-image",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Generale image from JSDOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
